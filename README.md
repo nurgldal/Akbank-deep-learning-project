@@ -90,21 +90,27 @@ Bu çalışmada geliştirilen **Custom CNN** modeli, deri hastalıkları veri se
 - Test doğruluğu: **%2.45**  
 Çoğu sınıf için precision, recall ve F1-score değerleri 0.0 çıkarken, sadece birkaç sınıfta sınırlı başarı sağlanabilmiştir.  
 Bu sonuçlar, çok sınıflı ve dengesiz veri setlerinde Custom CNN mimarisinin yetersiz kaldığını göstermektedir.  
-**Hiperparametre Optimizasyonu:**  
-Custom CNN üzerinde **Keras Tuner (Bayesian Optimization)** ile hiperparametre optimizasyonu yapılmıştır.  
-Amaç, doğrulama başarımını artırmak ve aşırı öğrenmeyi (overfitting) azaltmaktır.  
 
----
+## Hiperparametre Optimizasyonu (Custom CNN)
+Custom CNN modeli için **Keras Tuner** ile **Bayesian Optimization** yöntemi kullanılmıştır.  
+Amaç, modelin performansını artırmak ve overfitting/underfitting problemlerini azaltmaktır.  
 
-## MobileNetV2
-Bu çalışmada **transfer learning** yaklaşımıyla **MobileNetV2** modeli kullanılmıştır. Model ImageNet üzerinde önceden eğitilmiş ağırlıklarla başlatılmış ve iki aşamalı eğitim yapılmıştır:  
-- **Stage 1 (üst katman eğitimi):** MobileNetV2’nin taban katmanları dondurulmuş, sadece eklenen dense katmanlar eğitilmiştir.  
-- **Stage 2 (fine-tuning):** MobileNetV2’nin son 30 katmanı serbest bırakılmış ve düşük öğrenme oranıyla tekrar eğitilmiştir.  
+- Optimize edilen hiperparametreler: katman sayısı, filtre boyutları, kernel boyutları, dropout oranı, dense katman boyutu, L2 katsayısı, öğrenme oranı, optimizer, batch size, label smoothing.  
+- En iyi konfigürasyon ile model, doğrulama doğruluğunda (`val_accuracy`) **%68.7** seviyesine ulaşmıştır.  
+- Test setinde **%8.77 accuracy** elde edilmiştir.  
+- Confusion matrix ve classification report analizine göre bazı sınıflarda (örn. *Nail Fungus*, *Urticaria Hives*) görece daha yüksek başarı sağlanırken, veri dengesizliği olan sınıflarda düşük performans gözlenmiştir.  
+
+**Sonuç:** Hiperparametre optimizasyonu, Custom CNN modelinin elle seçilen parametrelere kıyasla daha uygun yapılandırılmasını sağlamış, ancak veri dengesizliği nedeniyle genel doğruluk sınırlı kalmıştır.
+
+## Transfer Learning ile MobileNetV2 
+Bu deneyde **MobileNetV2** mimarisi ile iki aşamalı transfer learning uygulanmıştır:  
+- **Stage 1:** Önceden eğitilmiş taban dondurularak sadece yeni eklenen katmanlar eğitildi.  
+- **Stage 2:** Son 30 katman açılarak ince ayar (fine-tuning) yapıldı.  
 **Sonuçlar:**  
-- Eğitim/Doğrulama doğruluğu: %70–80 arası  
-- Test doğruluğu: **%75–80**  
-- Precision, recall ve F1-score değerleri çoğu sınıfta dengeli ve yüksektir.  
-Bu bulgular, **transfer learning’in küçük ve dengesiz veri setlerinde Custom CNN’e göre çok daha başarılı** olduğunu göstermektedir.  
+- Doğrulama doğruluğu **%78** seviyelerine ulaşmıştır.  
+- Test setinde **%43.7 accuracy** ve **0.41 F1-score** elde edilmiştir.  
+- Bazı sınıflarda (ör. *Acne & Rosacea Photos*, *Nail Fungus*) yüksek başarı sağlanırken, benzer görünümlü sınıflarda karışıklıklar görülmüştür.  
+Genel olarak, **MobileNetV2 transfer learning yaklaşımı Custom CNN’e kıyasla daha güçlü performans göstermiştir.**
 
 # Kaggle Hesabı
   (https://www.kaggle.com/code/remnurgldal/skin-diseases)
