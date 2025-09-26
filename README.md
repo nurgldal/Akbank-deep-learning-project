@@ -81,7 +81,7 @@ Ayrıca:
 - Eğitim, doğrulama ve test veri kümeleri **caching** ve **prefetching** teknikleriyle hızlandırılmıştır.
 
 
-# Sonuçlar(https://www.kaggle.com/code/remnurgldal/skin-diseases)
+# Sonuçlar
 
 ## Custom CNN
 Bu çalışmada geliştirilen **Custom CNN** modeli, deri hastalıkları veri seti üzerinde düşük başarı göstermiştir.  
