@@ -27,7 +27,6 @@ Görseller farklı çözünürlüklerde olup çeşitli ışık koşulları, aç�
 Veri seti, klinik dermatoloji uygulamalarına uygun, çok sınıflı ve gerçek hayattaki çeşitliliği yansıtan bir yapı sunmaktadır. Bu nedenle, derin öğrenme tabanlı sınıflandırma modellerinin geliştirilmesi için oldukça elverişli bir kaynak niteliğindedir.
 
 # Kullanılan Yöntemler  
-
 Bu çalışmada deri hastalıkları görsellerinin sınıflandırılması amacıyla iki farklı derin öğrenme yaklaşımı kullanılmıştır: özel olarak tasarlanmış **Evrişimsel Sinir Ağı (Custom CNN)** ve **transfer öğrenme tabanlı MobileNetV2**.  
 ## 1. Custom CNN Mimarisi  
 Projede geliştirilen özel CNN modeli, klasik evrişimsel katmanların yanı sıra **SeparableConv2D blokları**, **residual (skip) bağlantılar**, **Batch Normalization (BN)**, **Dropout** ve **L2 düzenlileştirme** teknikleriyle zenginleştirilmiştir.  
@@ -79,5 +78,8 @@ Modelin eğitiminde aşırı öğrenmeyi önlemek ve çeşitliliği artırmak i�
 Ayrıca:  
 - Tüm görseller **224×224 boyutuna ölçeklenmiş**,  
 - Pikseller **[0,1] aralığına normalize edilmiş**,  
-- Eğitim, doğrulama ve test veri kümeleri **caching** ve **prefetching** teknikleriyle hızlandırılmıştır.  
+- Eğitim, doğrulama ve test veri kümeleri **caching** ve **prefetching** teknikleriyle hızlandırılmıştır.
+
+
+# Sonuçlar
 
