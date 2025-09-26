@@ -112,6 +112,22 @@ Bu deneyde **MobileNetV2** mimarisi ile iki aşamalı transfer learning uygulanm
 - Bazı sınıflarda (ör. *Acne & Rosacea Photos*, *Nail Fungus*) yüksek başarı sağlanırken, benzer görünümlü sınıflarda karışıklıklar görülmüştür.  
 Genel olarak, **MobileNetV2 transfer learning yaklaşımı Custom CNN’e kıyasla daha güçlü performans göstermiştir.**
 
+
+## Gelecek Çalışmalar ve Öneriler  
+- **Veri Dengesizliği İçin:**  
+  - SMOTE, focal loss veya class-balanced loss  
+  - Az sınıflara özel data augmentation  
+- **Daha Gelişmiş Modeller:**  
+  - EfficientNet, DenseNet, Vision Transformer (ViT)  
+  - Ensemble yöntemleri  
+- **Veri Kalitesini Artırma:**  
+  - Image denoising, contrast enhancement  
+- **Alan Uzmanı Destekli Çalışmalar:**  
+  - Benzer sınıfların birleştirilmesi  
+  - Ek açıklamalar (lesyon tipi, bölge bilgisi)  
+- **Gerçek Dünya Testleri:**  
+  - Klinik ortamlardan gelen veriler üzerinde test edilmesi  
+
 # Kaggle Hesabı
  https://www.kaggle.com/code/remnurgldal/skin-diseases
 
