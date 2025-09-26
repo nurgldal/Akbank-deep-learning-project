@@ -81,7 +81,7 @@ Ayrıca:
 - Eğitim, doğrulama ve test veri kümeleri **caching** ve **prefetching** teknikleriyle hızlandırılmıştır.
 
 
-# Sonuçlar
+# Sonuçlar(https://www.kaggle.com/code/remnurgldal/skin-diseases)
 
 ## Custom CNN
 Bu çalışmada geliştirilen **Custom CNN** modeli, deri hastalıkları veri seti üzerinde düşük başarı göstermiştir.  
@@ -106,5 +106,6 @@ Bu çalışmada **transfer learning** yaklaşımıyla **MobileNetV2** modeli kul
 - Precision, recall ve F1-score değerleri çoğu sınıfta dengeli ve yüksektir.  
 Bu bulgular, **transfer learning’in küçük ve dengesiz veri setlerinde Custom CNN’e göre çok daha başarılı** olduğunu göstermektedir.  
 
-
+# Kaggle Hesabı
+  (https://www.kaggle.com/code/remnurgldal/skin-diseases)
 
