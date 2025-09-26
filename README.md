@@ -113,5 +113,5 @@ Bu deneyde **MobileNetV2** mimarisi ile iki aşamalı transfer learning uygulanm
 Genel olarak, **MobileNetV2 transfer learning yaklaşımı Custom CNN’e kıyasla daha güçlü performans göstermiştir.**
 
 # Kaggle Hesabı
-  (https://www.kaggle.com/code/remnurgldal/skin-diseases)
+ https://www.kaggle.com/code/remnurgldal/skin-diseases
 
